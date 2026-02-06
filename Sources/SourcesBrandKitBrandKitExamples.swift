@@ -1,17 +1,23 @@
 //
-//  ShowcaseExamples.swift
-//  BrandKit Showcase Examples
+//  BrandKitExamples.swift
+//  BrandKit Example Views
 //
 //  Complete examples showing how to use BrandKit in real applications.
 //  Use the previews at the bottom to see each example.
+//
+//  To use as a real app: Copy this file to a new iOS/macOS app project
+//  and uncomment the @main App struct at the top.
 //
 //  Created: February 6, 2026
 //
 
 import SwiftUI
 
-// NOTE: To use as an actual app, uncomment the @main and App struct below
-// and create a new iOS/macOS app target
+// NOTE: To use as an actual runnable app:
+// 1. Create a new iOS/macOS app in Xcode
+// 2. Copy this file to that project
+// 3. Uncomment the @main section below
+// 4. Run the app!
 
 /*
 @main
@@ -27,11 +33,13 @@ struct BrandKitShowcaseApp: App {
 // MARK: - Example Usage in a Real App
 
 /// Example: Real-world app screen using BrandKit
-struct ExampleAppView: View {
+public struct ExampleAppView: View {
     @State private var isLoading = false
     @State private var selectedTab = 0
     
-    var body: some View {
+    public init() {}
+    
+    public var body: some View {
         TabView(selection: $selectedTab) {
             HomeView()
                 .tabItem {
@@ -56,10 +64,12 @@ struct ExampleAppView: View {
 
 // MARK: - Home View Example
 
-struct HomeView: View {
+public struct HomeView: View {
     @State private var isLoading = false
     
-    var body: some View {
+    public init() {}
+    
+    public var body: some View {
         NavigationStack {
             ScrollView {
                 VStack(spacing: BrandKit.Spacing.large) {
@@ -181,13 +191,20 @@ struct HomeView: View {
 
 // MARK: - Supporting Components
 
-struct StatCard: View {
+public struct StatCard: View {
     let icon: String
     let value: String
     let label: String
     let color: Color
     
-    var body: some View {
+    public init(icon: String, value: String, label: String, color: Color) {
+        self.icon = icon
+        self.value = value
+        self.label = label
+        self.color = color
+    }
+    
+    public var body: some View {
         VStack(spacing: BrandKit.Spacing.small) {
             Image(systemName: icon)
                 .font(.title2)
@@ -207,11 +224,18 @@ struct StatCard: View {
     }
 }
 
-struct RecentItem: View {
+public struct RecentItem: View {
     let title: String
     let subtitle: String
     let icon: String
     let status: String
+    
+    public init(title: String, subtitle: String, icon: String, status: String) {
+        self.title = title
+        self.subtitle = subtitle
+        self.icon = icon
+        self.status = status
+    }
     
     var statusColor: Color {
         switch status {
@@ -221,7 +245,7 @@ struct RecentItem: View {
         }
     }
     
-    var body: some View {
+    public var body: some View {
         HStack(spacing: BrandKit.Spacing.medium) {
             BrandComponents.IconCircle(
                 icon: icon,
@@ -253,8 +277,10 @@ struct RecentItem: View {
 
 // MARK: - Library View Example
 
-struct LibraryView: View {
-    var body: some View {
+public struct LibraryView: View {
+    public init() {}
+    
+    public var body: some View {
         NavigationStack {
             ScrollView {
                 VStack(spacing: BrandKit.Spacing.large) {
@@ -290,11 +316,16 @@ struct LibraryView: View {
     }
 }
 
-struct FilterChip: View {
+public struct FilterChip: View {
     let label: String
     let isSelected: Bool
     
-    var body: some View {
+    public init(label: String, isSelected: Bool) {
+        self.label = label
+        self.isSelected = isSelected
+    }
+    
+    public var body: some View {
         Text(label)
             .font(.subheadline)
             .fontWeight(isSelected ? .semibold : .regular)
@@ -310,10 +341,14 @@ struct FilterChip: View {
     }
 }
 
-struct LibraryItemCard: View {
+public struct LibraryItemCard: View {
     let index: Int
     
-    var body: some View {
+    public init(index: Int) {
+        self.index = index
+    }
+    
+    public var body: some View {
         VStack(alignment: .leading, spacing: BrandKit.Spacing.small) {
             // Thumbnail
             RoundedRectangle(cornerRadius: BrandKit.CornerRadius.medium)
@@ -348,11 +383,13 @@ struct LibraryItemCard: View {
 
 // MARK: - Settings View Example
 
-struct SettingsView: View {
+public struct SettingsView: View {
     @State private var notificationsEnabled = true
     @State private var darkModeEnabled = false
     
-    var body: some View {
+    public init() {}
+    
+    public var body: some View {
         NavigationStack {
             ScrollView {
                 VStack(spacing: BrandKit.Spacing.large) {
@@ -421,11 +458,16 @@ struct SettingsView: View {
     }
 }
 
-struct SettingsSection<Content: View>: View {
+public struct SettingsSection<Content: View>: View {
     let title: String
     @ViewBuilder let content: Content
     
-    var body: some View {
+    public init(title: String, @ViewBuilder content: () -> Content) {
+        self.title = title
+        self.content = content()
+    }
+    
+    public var body: some View {
         VStack(alignment: .leading, spacing: BrandKit.Spacing.medium) {
             Text(title)
                 .font(.headline)
@@ -441,12 +483,18 @@ struct SettingsSection<Content: View>: View {
     }
 }
 
-struct SettingsToggle: View {
+public struct SettingsToggle: View {
     let icon: String
     let title: String
     @Binding var isOn: Bool
     
-    var body: some View {
+    public init(icon: String, title: String, isOn: Binding<Bool>) {
+        self.icon = icon
+        self.title = title
+        self._isOn = isOn
+    }
+    
+    public var body: some View {
         HStack(spacing: BrandKit.Spacing.medium) {
             Image(systemName: icon)
                 .foregroundColor(BrandKit.Colors.primaryBlue)
@@ -463,12 +511,18 @@ struct SettingsToggle: View {
     }
 }
 
-struct SettingsRow: View {
+public struct SettingsRow: View {
     let icon: String
     let title: String
     let value: String
     
-    var body: some View {
+    public init(icon: String, title: String, value: String) {
+        self.icon = icon
+        self.title = title
+        self.value = value
+    }
+    
+    public var body: some View {
         HStack(spacing: BrandKit.Spacing.medium) {
             Image(systemName: icon)
                 .foregroundColor(BrandKit.Colors.primaryBlue)
