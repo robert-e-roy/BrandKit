@@ -27,9 +27,5 @@ let package = Package(
                 .enableUpcomingFeature("BareSlashRegexLiterals")
             ]
         ),
-        .testTarget(
-            name: "BrandKitTests",
-            dependencies: ["BrandKit"]
-        ),
     ]
 )
