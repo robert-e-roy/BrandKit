@@ -74,14 +74,14 @@ public enum BrandKit {
         )
         
         /// Diagonal gradient: blue → purple (top-left to bottom-right)
-        static let primaryDiagonal = LinearGradient(
+        public static let primaryDiagonal = LinearGradient(
             gradient: Gradient(colors: [Colors.primaryBlue, Colors.primaryPurple]),
             startPoint: .topLeading,
             endPoint: .bottomTrailing
         )
         
         /// Vertical gradient: blue → purple
-        static let primaryVertical = LinearGradient(
+        public static let primaryVertical = LinearGradient(
             gradient: Gradient(colors: [Colors.primaryBlue, Colors.primaryPurple]),
             startPoint: .top,
             endPoint: .bottom
@@ -90,7 +90,7 @@ public enum BrandKit {
         // Background Gradients
         
         /// Light, subtle background gradient for main screens
-        static let backgroundLight = LinearGradient(
+        public static let backgroundLight = LinearGradient(
             gradient: Gradient(colors: [
                 Colors.backgroundLightBlue,
                 Colors.backgroundSoftBlue
@@ -100,7 +100,7 @@ public enum BrandKit {
         )
         
         /// Dark background gradient for launch/splash screens
-        static let backgroundDark = LinearGradient(
+        public static let backgroundDark = LinearGradient(
             gradient: Gradient(colors: [
                 Colors.darkNavy,
                 Colors.darkPurple
@@ -112,7 +112,7 @@ public enum BrandKit {
         // Success Gradients
         
         /// Success gradient: green → teal
-        static let success = LinearGradient(
+        public static let success = LinearGradient(
             gradient: Gradient(colors: [
                 Colors.successGreen,
                 Colors.successTeal
@@ -124,7 +124,7 @@ public enum BrandKit {
         // Special Effects
         
         /// Radial glow effect (good for icons and highlights)
-        static let glow = RadialGradient(
+        public static let glow = RadialGradient(
             gradient: Gradient(colors: [
                 Colors.primaryBlue.opacity(0.3),
                 Color.clear
@@ -137,7 +137,7 @@ public enum BrandKit {
         // Empty State Gradients
         
         /// Subtle gradient for empty state icons
-        static let emptyStateIcon = LinearGradient(
+        public static let emptyStateIcon = LinearGradient(
             gradient: Gradient(colors: [
                 Colors.primaryBlue.opacity(0.1),
                 Colors.primaryPurple.opacity(0.1)
@@ -150,44 +150,44 @@ public enum BrandKit {
     // MARK: - Typography
     
     /// Typography system with font sizes and weights
-    enum Typography {
+    public enum Typography {
         // Font Sizes
-        static let titleLarge: CGFloat = 28
-        static let titleMedium: CGFloat = 22
-        static let titleSmall: CGFloat = 18
+        public static let titleLarge: CGFloat = 28
+        public static let titleMedium: CGFloat = 22
+        public static let titleSmall: CGFloat = 18
         
-        static let body: CGFloat = 16
-        static let bodySmall: CGFloat = 14
-        static let caption: CGFloat = 12
-        static let captionSmall: CGFloat = 10
+        public static let body: CGFloat = 16
+        public static let bodySmall: CGFloat = 14
+        public static let caption: CGFloat = 12
+        public static let captionSmall: CGFloat = 10
         
         // Font Weights
-        enum Weight {
-            static let ultraLight = Font.Weight.ultraLight
-            static let thin = Font.Weight.thin
-            static let light = Font.Weight.light
-            static let regular = Font.Weight.regular
-            static let medium = Font.Weight.medium
-            static let semibold = Font.Weight.semibold
-            static let bold = Font.Weight.bold
-            static let heavy = Font.Weight.heavy
-            static let black = Font.Weight.black
+        public enum Weight {
+            public static let ultraLight = Font.Weight.ultraLight
+            public static let thin = Font.Weight.thin
+            public static let light = Font.Weight.light
+            public static let regular = Font.Weight.regular
+            public static let medium = Font.Weight.medium
+            public static let semibold = Font.Weight.semibold
+            public static let bold = Font.Weight.bold
+            public static let heavy = Font.Weight.heavy
+            public static let black = Font.Weight.black
         }
         
         // Common Font Configurations
         
         /// Large title with rounded design
-        static func largeTitle(weight: Font.Weight = .bold) -> Font {
+        public static func largeTitle(weight: Font.Weight = .bold) -> Font {
             .system(size: titleLarge, weight: weight, design: .rounded)
         }
         
         /// Standard body text
-        static func body(weight: Font.Weight = .regular) -> Font {
+        public static func body(weight: Font.Weight = .regular) -> Font {
             .system(size: body, weight: weight)
         }
         
         /// Monospaced font for code/timestamps
-        static func monospaced(size: CGFloat = body, weight: Font.Weight = .regular) -> Font {
+        public static func monospaced(size: CGFloat = body, weight: Font.Weight = .regular) -> Font {
             .system(size: size, weight: weight, design: .monospaced)
         }
     }
@@ -195,96 +195,96 @@ public enum BrandKit {
     // MARK: - Spacing
     
     /// Consistent spacing system
-    enum Spacing {
-        static let extraSmall: CGFloat = 4
-        static let small: CGFloat = 8
-        static let medium: CGFloat = 16
-        static let large: CGFloat = 24
-        static let extraLarge: CGFloat = 32
-        static let huge: CGFloat = 40
-        static let massive: CGFloat = 48
+    public enum Spacing {
+        public static let extraSmall: CGFloat = 4
+        public static let small: CGFloat = 8
+        public static let medium: CGFloat = 16
+        public static let large: CGFloat = 24
+        public static let extraLarge: CGFloat = 32
+        public static let huge: CGFloat = 40
+        public static let massive: CGFloat = 48
     }
     
     // MARK: - Corner Radius
     
     /// Consistent corner radius values
-    enum CornerRadius {
-        static let small: CGFloat = 8
-        static let medium: CGFloat = 12
-        static let large: CGFloat = 16
-        static let extraLarge: CGFloat = 24
-        static let circle: CGFloat = 40
+    public enum CornerRadius {
+        public static let small: CGFloat = 8
+        public static let medium: CGFloat = 12
+        public static let large: CGFloat = 16
+        public static let extraLarge: CGFloat = 24
+        public static let circle: CGFloat = 40
     }
     
     // MARK: - Shadows
     
     /// Shadow configurations for different elements
-    enum Shadows {
+    public enum Shadows {
         // Card Shadows
-        static let cardColor = Color.black.opacity(0.08)
-        static let cardRadius: CGFloat = 16
-        static let cardOffset = CGSize(width: 0, height: 8)
+        public static let cardColor = Color.black.opacity(0.08)
+        public static let cardRadius: CGFloat = 16
+        public static let cardOffset = CGSize(width: 0, height: 8)
         
         // Button Shadows
-        static let buttonRadius: CGFloat = 12
-        static let buttonOffset = CGSize(width: 0, height: 6)
+        public static let buttonRadius: CGFloat = 12
+        public static let buttonOffset = CGSize(width: 0, height: 6)
         
         // Accent Shadows
-        static let accentBlue = Color.blue.opacity(0.4)
-        static let accentPurple = Color.purple.opacity(0.4)
-        static let accentGreen = Color.green.opacity(0.4)
+        public static let accentBlue = Color.blue.opacity(0.4)
+        public static let accentPurple = Color.purple.opacity(0.4)
+        public static let accentGreen = Color.green.opacity(0.4)
         
         // Small Shadow (for chips, tags, etc.)
-        static let smallRadius: CGFloat = 6
-        static let smallOffset = CGSize(width: 0, height: 3)
+        public static let smallRadius: CGFloat = 6
+        public static let smallOffset = CGSize(width: 0, height: 3)
     }
     
     // MARK: - Icon Sizes
     
     /// Consistent icon sizing
-    enum IconSize {
-        static let small: CGFloat = 16
-        static let medium: CGFloat = 24
-        static let large: CGFloat = 32
-        static let extraLarge: CGFloat = 50
-        static let huge: CGFloat = 60
+    public enum IconSize {
+        public static let small: CGFloat = 16
+        public static let medium: CGFloat = 24
+        public static let large: CGFloat = 32
+        public static let extraLarge: CGFloat = 50
+        public static let huge: CGFloat = 60
         
         // Circle Background Sizes
-        static let circleSmall: CGFloat = 40
-        static let circleMedium: CGFloat = 50
-        static let circleLarge: CGFloat = 100
-        static let circleExtraLarge: CGFloat = 120
+        public static let circleSmall: CGFloat = 40
+        public static let circleMedium: CGFloat = 50
+        public static let circleLarge: CGFloat = 100
+        public static let circleExtraLarge: CGFloat = 120
     }
     
     // MARK: - Animations
     
     /// Animation configurations
-    enum Animations {
-        static let standardDuration: Double = 0.5
-        static let fastDuration: Double = 0.3
-        static let slowDuration: Double = 0.8
+    public enum Animations {
+        public static let standardDuration: Double = 0.5
+        public static let fastDuration: Double = 0.3
+        public static let slowDuration: Double = 0.8
         
-        static let standardDamping: Double = 0.8
-        static let bouncyDamping: Double = 0.6
-        static let stiffDamping: Double = 0.9
+        public static let standardDamping: Double = 0.8
+        public static let bouncyDamping: Double = 0.6
+        public static let stiffDamping: Double = 0.9
         
         /// Standard spring animation
-        static var standardSpring: Animation {
+        public static var standardSpring: Animation {
             .spring(response: standardDuration, dampingFraction: standardDamping)
         }
         
         /// Bouncy spring animation
-        static var bouncySpring: Animation {
+        public static var bouncySpring: Animation {
             .spring(response: standardDuration, dampingFraction: bouncyDamping)
         }
         
         /// Fast, subtle animation
-        static var fast: Animation {
+        public static var fast: Animation {
             .easeInOut(duration: fastDuration)
         }
         
         /// Slow, smooth animation
-        static var smooth: Animation {
+        public static var smooth: Animation {
             .easeInOut(duration: slowDuration)
         }
     }
@@ -292,12 +292,12 @@ public enum BrandKit {
     // MARK: - Opacities
     
     /// Standard opacity values
-    enum Opacity {
-        static let subtle: Double = 0.1
-        static let light: Double = 0.2
-        static let medium: Double = 0.3
-        static let heavy: Double = 0.5
-        static let veryHeavy: Double = 0.7
+    public enum Opacity {
+        public static let subtle: Double = 0.1
+        public static let light: Double = 0.2
+        public static let medium: Double = 0.3
+        public static let heavy: Double = 0.5
+        public static let veryHeavy: Double = 0.7
     }
 }
 
@@ -307,7 +307,7 @@ extension View {
     // MARK: - Card Styles
     
     /// Applies standard card styling with shadow
-    func brandCardStyle() -> some View {
+    public func brandCardStyle() -> some View {
         self
             .background(BrandKit.Colors.cardBackground)
             .clipShape(RoundedRectangle(cornerRadius: BrandKit.CornerRadius.extraLarge))
@@ -320,7 +320,7 @@ extension View {
     }
     
     /// Compact card style with smaller corner radius
-    func brandCompactCardStyle() -> some View {
+    public func brandCompactCardStyle() -> some View {
         self
             .background(BrandKit.Colors.cardBackground)
             .clipShape(RoundedRectangle(cornerRadius: BrandKit.CornerRadius.medium))
@@ -335,7 +335,7 @@ extension View {
     // MARK: - Button Styles
     
     /// Primary button with blue-purple gradient
-    func brandPrimaryButton() -> some View {
+    public func brandPrimaryButton() -> some View {
         self
             .foregroundColor(.white)
             .frame(maxWidth: .infinity)
@@ -351,7 +351,7 @@ extension View {
     }
     
     /// Success button with green gradient
-    func brandSuccessButton() -> some View {
+    public func brandSuccessButton() -> some View {
         self
             .foregroundColor(.white)
             .frame(maxWidth: .infinity)
@@ -367,7 +367,7 @@ extension View {
     }
     
     /// Secondary button (outlined, no fill)
-    func brandSecondaryButton() -> some View {
+    public func brandSecondaryButton() -> some View {
         self
             .foregroundColor(BrandKit.Colors.primaryBlue)
             .frame(maxWidth: .infinity)
@@ -381,7 +381,7 @@ extension View {
     }
     
     /// Compact button style for small actions
-    func brandCompactButton() -> some View {
+    public func brandCompactButton() -> some View {
         self
             .foregroundColor(BrandKit.Colors.primaryBlue)
             .frame(maxWidth: .infinity)
@@ -397,7 +397,7 @@ extension View {
     }
     
     /// Circular icon button with gradient
-    func brandCircleButton(size: CGFloat = BrandKit.IconSize.circleMedium) -> some View {
+    public func brandCircleButton(size: CGFloat = BrandKit.IconSize.circleMedium) -> some View {
         self
             .foregroundColor(.white)
             .frame(width: size, height: size)
@@ -414,7 +414,7 @@ extension View {
     // MARK: - Background Styles
     
     /// Standard app background with gradient
-    func brandBackground() -> some View {
+    public func brandBackground() -> some View {
         ZStack {
             BrandKit.Gradients.backgroundLight
                 .ignoresSafeArea()
@@ -423,7 +423,7 @@ extension View {
     }
     
     /// Dark background (for launch screens, etc.)
-    func brandDarkBackground() -> some View {
+    public func brandDarkBackground() -> some View {
         ZStack {
             BrandKit.Gradients.backgroundDark
                 .ignoresSafeArea()
@@ -434,21 +434,21 @@ extension View {
     // MARK: - Text Styles
     
     /// Large title with brand styling
-    func brandTitle() -> some View {
+    public func brandTitle() -> some View {
         self
             .font(BrandKit.Typography.largeTitle())
             .foregroundColor(BrandKit.Colors.textPrimary)
     }
     
     /// Subtitle text
-    func brandSubtitle() -> some View {
+    public func brandSubtitle() -> some View {
         self
             .font(.subheadline)
             .foregroundColor(BrandKit.Colors.textSecondary)
     }
     
     /// Gradient text (works with Text views)
-    func brandGradientText() -> some View {
+    public func brandGradientText() -> some View {
         self.foregroundStyle(BrandKit.Gradients.primaryHorizontal)
     }
 }
@@ -456,20 +456,20 @@ extension View {
 // MARK: - Reusable Components
 
 /// Pre-built brand components that can be used across projects
-enum BrandComponents {
+public enum BrandComponents {
     
     // MARK: - Loading Spinner
     
     /// Branded loading spinner with gradient
-    struct LoadingSpinner: View {
+    public struct LoadingSpinner: View {
         @State private var rotation: Double = 0
         let size: CGFloat
         
-        init(size: CGFloat = 60) {
+        public init(size: CGFloat = 60) {
             self.size = size
         }
         
-        var body: some View {
+        public var body: some View {
             ZStack {
                 Circle()
                     .stroke(BrandKit.Colors.primaryBlue.opacity(0.2), lineWidth: 4)
@@ -495,12 +495,19 @@ enum BrandComponents {
     // MARK: - Status Badge
     
     /// Colored status badge with icon
-    struct StatusBadge: View {
+    public struct StatusBadge: View {
         let icon: String
         let text: String
         let color: Color
+
+        /// Public so apps importing the package can use it (it was only reachable inside the module).
+        public init(icon: String, text: String, color: Color) {
+            self.icon = icon
+            self.text = text
+            self.color = color
+        }
         
-        var body: some View {
+        public var body: some View {
             HStack(spacing: BrandKit.Spacing.small) {
                 Image(systemName: icon)
                     .font(.caption)
@@ -518,12 +525,19 @@ enum BrandComponents {
     // MARK: - Metadata Chip
     
     /// Small chip showing metadata (like duration, fps, etc.)
-    struct MetadataChip: View {
+    public struct MetadataChip: View {
         let icon: String
         let value: String
         let color: Color
+
+        /// Public so apps importing the package can use it (it was only reachable inside the module).
+        public init(icon: String, value: String, color: Color) {
+            self.icon = icon
+            self.value = value
+            self.color = color
+        }
         
-        var body: some View {
+        public var body: some View {
             HStack(spacing: 6) {
                 Image(systemName: icon)
                     .font(.caption)
@@ -544,13 +558,13 @@ enum BrandComponents {
     // MARK: - Icon Circle
     
     /// Circular icon with gradient background
-    struct IconCircle: View {
+    public struct IconCircle: View {
         let icon: String
         let size: CGFloat
         let iconSize: CGFloat
         let gradient: LinearGradient
         
-        init(
+        public init(
             icon: String,
             size: CGFloat = BrandKit.IconSize.circleLarge,
             iconSize: CGFloat = BrandKit.IconSize.extraLarge,
@@ -562,7 +576,7 @@ enum BrandComponents {
             self.gradient = gradient
         }
         
-        var body: some View {
+        public var body: some View {
             ZStack {
                 Circle()
                     .fill(BrandKit.Gradients.emptyStateIcon)
@@ -578,11 +592,17 @@ enum BrandComponents {
     // MARK: - Section Header
     
     /// Styled section header with icon
-    struct SectionHeader: View {
+    public struct SectionHeader: View {
         let icon: String
         let title: String
+
+        /// Public so apps importing the package can use it (it was only reachable inside the module).
+        public init(icon: String, title: String) {
+            self.icon = icon
+            self.title = title
+        }
         
-        var body: some View {
+        public var body: some View {
             HStack {
                 Image(systemName: icon)
                     .font(.title3)
